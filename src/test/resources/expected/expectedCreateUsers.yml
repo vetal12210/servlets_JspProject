@@ -1,0 +1,30 @@
+user:
+  - id: 1
+    login: "Sasha"
+    password: "123"
+    email: "Sasha@email"
+    firstname: "Sasha"
+    lastname: "Diesel"
+    birthday: "2001-01-01"
+    role_id: 1
+  - id: 2
+    login: "Vitaliy"
+    password: "1234"
+    email: "Vitaliy@email"
+    firstname: "Vitaliy"
+    lastname: "Pavlov"
+    birthday: "2001-01-02"
+    role_id: 2
+  - id: 3
+    login: "login"
+    password: "password"
+    email: "email"
+    firstname: "firstname"
+    lastname: "lastname"
+    birthday: "2001-01-03"
+    role_id: 2
+role:
+  - id: 1
+    name: "admin"
+  - id: 2
+    name: "user"
