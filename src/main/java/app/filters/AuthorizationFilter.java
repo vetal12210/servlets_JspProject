@@ -25,15 +25,12 @@ public class AuthorizationFilter implements Filter {
         HttpSession session = req.getSession();
         Role role = (Role) session.getAttribute("role");
         boolean isAdmin = role.getName().equals("admin");
-        boolean isUser = role.getName().equals("user");
         String servletPath = req.getServletPath();
 
         if (isAdmin && servletPath.contains("/admin")) {
             filterChain.doFilter(req, res);
-        } else if (isUser && servletPath.contains("/user")) {
-            filterChain.doFilter(req, res);
         } else {
-            req.getRequestDispatcher("/login").forward(req, res);
+            req.getRequestDispatcher("/user").forward(req, res);
         }
 
     }

@@ -1,16 +1,16 @@
-CREATE TABLE IF NOT EXISTS role (
+CREATE TABLE IF NOT EXISTS roles (
   id   IDENTITY PRIMARY KEY,
   name VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE IF NOT EXISTS users (
   id       IDENTITY PRIMARY KEY,
   login    VARCHAR(64) UNIQUE NOT NULL,
   password VARCHAR(64) NOT NULL,
   email VARCHAR(64) UNIQUE NOT NULL,
-  firstname VARCHAR(64),
-  lastname VARCHAR(64),
+  firstName VARCHAR(64),
+  lastName VARCHAR(64),
   birthday DATE  NOT NULL,
-  role_id     BIGINT    NOT NULL,
-  FOREIGN KEY (role_id) REFERENCES role (id)
+  roles_id     BIGINT    NOT NULL,
+  FOREIGN KEY (roles_id) REFERENCES roles (id)
 );
